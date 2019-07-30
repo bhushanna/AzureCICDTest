@@ -1,0 +1,25 @@
+{
+	"name": "SQL_TestCICD",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_TestCICD_SQL",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"TableName": {
+				"type": "string",
+				"defaultValue": "[dbo].[Emp]"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": {
+				"value": "@dataset().TableName",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
